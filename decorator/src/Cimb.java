@@ -1,4 +1,5 @@
-public class CIMB {
+public class Cimb {
+
     public static void main(String[] args) {
 
         SavingsAccount account = new SavingsAccount();
@@ -15,8 +16,7 @@ public class CIMB {
 
         System.out.println("----------------------");
 
-        GSave gSave = new GSave();
-        gSave.setBankAccount(account);
+        GSave gSave = new GSave(account);
         System.out.println(gSave.showInfo());
         System.out.println("Account type: " + gSave.showAccountType());
         System.out.println("Interest rate: " + gSave.getInterestRate());
@@ -25,8 +25,7 @@ public class CIMB {
 
         System.out.println("----------------------");
 
-        UpSave upSave = new UpSave();
-        upSave.setBankAccount(account);
+        UpSave upSave = new UpSave(account);
         System.out.println(upSave.showInfo());
         System.out.println("Account type: " + upSave.showAccountType());
         System.out.println("Interest rate: " + upSave.getInterestRate());

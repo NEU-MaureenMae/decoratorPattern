@@ -1,4 +1,4 @@
-interface BankAccount {
+public interface BankAccount {
     String showAccountType();
     double getInterestRate();
     double getBalance();

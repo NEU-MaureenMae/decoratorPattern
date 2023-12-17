@@ -1,9 +1,18 @@
-class GSave implements BankAccountDecorator, BankAccount {
-    private BankAccount bankAccount;
+public class GSave implements BankAccountDecorator {
+    private BankAccount account;
+
+    public GSave(BankAccount account) {
+        this.account = account;
+    }
 
     @Override
-    public void setBankAccount(BankAccount account) {
-        this.bankAccount = account;
+    public String showBenefits() {
+        return account.showBenefits() + ", GSave Transfer";
+    }
+
+    @Override
+    public double getBalance() {
+        return account.getBalance();
     }
 
     @Override
@@ -13,26 +22,16 @@ class GSave implements BankAccountDecorator, BankAccount {
 
     @Override
     public double getInterestRate() {
-        return 0.025; // 2.5%
-    }
-
-    @Override
-    public double getBalance() {
-        return bankAccount.getBalance();
-    }
-
-    @Override
-    public String showBenefits() {
-        return bankAccount.showBenefits() + ", GCash Transfer";
+        return 0.025;
     }
 
     @Override
     public double computeBalanceWithInterest() {
-        return bankAccount.getBalance() * (1 + getInterestRate());
+        return getBalance() * (1 + getInterestRate());
     }
 
     @Override
     public String showInfo() {
-        return bankAccount.showInfo();
+        return account.showInfo();
     }
 }

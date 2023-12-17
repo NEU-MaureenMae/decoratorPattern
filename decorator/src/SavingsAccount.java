@@ -1,7 +1,7 @@
-class SavingsAccount implements BankAccount {
+public class SavingsAccount implements BankAccount {
     private int accountNumber;
     private String accountName;
-    private double balance;
+    private Double balance;
 
     @Override
     public String showAccountType() {
@@ -30,9 +30,9 @@ class SavingsAccount implements BankAccount {
 
     @Override
     public String showInfo() {
-        return "Account number: " + accountNumber + "\n" +
-                "Account name: " + accountName + "\n" +
-                "Balance: " + balance;
+        return "Account number: " + accountNumber +
+                "\nAccount name: " + accountName +
+                "\nBalance: " + balance;
     }
 
     public void setAccountNumber(int accountNumber) {
@@ -43,8 +43,16 @@ class SavingsAccount implements BankAccount {
         this.accountName = accountName;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
+
+
+
+
+
+
+
+
 
 }
